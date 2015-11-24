@@ -1,0 +1,110 @@
+<DOCTYPE html>
+  <html>
+  <head>
+<script src="jquery.min.js"></script>
+  <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.min.js"></script>
+      <link rel="stylesheet" href="bootstrap-theme.min.css">
+        <meta charsert="utf-8">
+
+    <title>My Sport Quiz</title>
+
+  <script type="text/javascript">
+    $(function(){ //why do i need this?
+
+      $("#submitting" ).submit(function(evt){
+        //read about this
+
+        evt.preventDefault();
+
+    var answers = $(this).serializeArray();
+
+        var answersString = JSON.stringify(answers);
+          alert(answersString);
+
+  //alert($(this).serializeArray()[0].name);
+  //how to check the answers?
+
+  //create a space on the right to display the score...
+
+    });
+});
+
+
+</script>
+  </head>
+
+  <body>
+<div class="container">
+  
+<form id="submitting">
+  <h1>My Sport Quiz</h1>
+  
+    <h2>What is the most popular sport in S.A?</h2>
+
+  <div class="radio">
+  <label>
+    <input type="radio" name="Question1" id="optionsRadios1" value="Under Water Hockey" checked>
+    Under Water Hockey
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="Question1" id="optionsRadios1" value="Rugby" checked>
+    Rugby
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="Question1" id="optionsRadios1" value="Soccer" checked>
+    Soccer
+  </label>
+</div>
+
+  <h2>For which sport do you need a racket?</h2>
+<div class="radio">
+  <label>
+    <input type="radio" name="Question2" id="optionsRadios1" value="Tennis" checked>
+    Tennis
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="Question2" id="optionsRadios1" value="Athletics" checked>
+    Athletics
+  </label>
+</div>
+  <div class="radio">
+  <label>
+    <input type="radio" name="Question2" id="optionsRadios1" value="Basketball" checked>
+    Basketball
+  </label>
+</div>
+
+  <h2>Which sport use the word "love"?</h2>
+
+  <div class="radio">
+  <label>
+    <input type="radio" name="Question3" id="optionsRadios1" value="Long Jump" checked>
+     Long Jump
+  </label>
+<div class="radio">
+  <label>
+    <input type="radio" name="Question3" id="optionsRadios1" value="Tennis" checked>
+     Tennis
+    </label>
+    <div class="radio">
+  <label>
+    <input type="radio" name="Question3" id="optionsRadios1" value="Swimming" checked>
+     Swimming
+  </label>
+
+<br>
+  <button class="btn btn-success text-center btn-lg active" id="button">Submit</button>
+    </div>
+    </div>
+</form>
+
+  
+  </body>
+  </html>
