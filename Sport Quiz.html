@@ -10,39 +10,34 @@
     <title>My Sport Quiz</title>
 
   <script type="text/javascript">
-    $(function(){ //why do i need this?
+    $(function(){
+       $("#submitting" ).submit(function(evt){
+          evt.preventDefault();
+            
+            var answers = $(this).serializeArray();
+              var answersString = JSON.stringify(answers);
+              var score = 0;
+                // confirm(answersString);
+                  $("#answers").html(answersString);
 
-      $("#submitting" ).submit(function(evt){
-        //read about this
-
-        evt.preventDefault();
-
-    var answers = $(this).serializeArray();
-
-        var answersString = JSON.stringify(answers);
-          alert(answersString);
-
-  //alert($(this).serializeArray()[0].name);
-  //how to check the answers?
-
-  //create a space on the right to display the score...
-
-    });
+var actualAnswers =[{"name":"Question1","value":"Soccer"},
+                    {"name":"Question2","value":"Tennis"},
+                    {"name":"Question3","value":"Tennis"}]
+  });
 });
-
-
+      
 </script>
-  </head>
+</head>
 
-  <body>
-<div class="container">
-  
+<body>
+  <div class="col-xs-12 col-md-6 bg-warning">
+    <div class="container">
+
 <form id="submitting">
   <h1>My Sport Quiz</h1>
-  
     <h2>What is the most popular sport in S.A?</h2>
 
-  <div class="radio">
+      <div class="radio">
   <label>
     <input type="radio" name="Question1" id="optionsRadios1" value="Under Water Hockey" checked>
     Under Water Hockey
@@ -102,9 +97,28 @@
 <br>
   <button class="btn btn-success text-center btn-lg active" id="button">Submit</button>
     </div>
-    </div>
-</form>
+  </div>
+</div>
+  </div>
+    </form>
+</div>  
+
+<div class="col-xs-12 col-md-6 bg-primary">
+  <h1>Your Score</h1>
+    <div id="answers"></div>
+</div>
+</body>
+</html>
 
   
-  </body>
-  </html>
+
+
+
+
+
+  
+  
+     
+    
+  
+
